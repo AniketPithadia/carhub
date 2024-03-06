@@ -53,6 +53,7 @@ export const getCarListing = async (req, res, next) => {
 export const getAllCarsListings = async (req, res, next) => {
   try {
     const carlistings = await CarListing.find();
+    console.log(carlistings.length);
     return res.status(200).json(carlistings);
   } catch (error) {
     next(error);
